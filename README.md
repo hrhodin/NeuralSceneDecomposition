@@ -1,4 +1,4 @@
-Unsupervised Geometry-Aware Representation Learning for 3D Human Pose Estimation
+Neural Scene Decomposition for Human Motion Capture
 ===================
 
 CVPR 2018 paper by Helge Rhodin, Victor Constantin, Isinsu Katircioglu, Mathieu Salzmann, Pascal Fua
