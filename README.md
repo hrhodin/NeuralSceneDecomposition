@@ -37,7 +37,7 @@ For testing a pre-trained model only the following packages are required:
 * pickle
 * imageio
 
-Moreover you will need an X Windows System (e.g.,XQuartz for mac) to run the interactive demo.
+Moreover you will need a GPU and X Windows System (e.g.,XQuartz for mac) to run the interactive demo.
 
 Test the pretrained model
 =======================
