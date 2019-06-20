@@ -65,19 +65,19 @@ Self-supervised Representation Learning
 
 After downloading and file extraction, you should be able to start training by executing the following scrip from within the code root folder.
 ```
-python configs/train_encodeDecode.py
+python configs/train_detect_encode_decode.py
 ```
 There is quite a bit of debug output. Feel free to remove some if you feel like.
 
-It will create an "output/encode_resL3_ResNet_layers4...." folder to monitor the progress (in case you don't use visdom).
-Every 5k frames it will evaluate on the test set. This and other settings can be changed in configs/config_dict_encodeDecode.py
+It will create an "output/trainNVS...." folder to monitor the progress (in case you don't use visdom).
+Every 5k frames it will evaluate on the test set. This and other settings can be changed in configs/config_detect_encode_decode.py
 
 Test your model
 =======================
 
-You have to set the 'network_path' in configs/config_test_encodeDecode.py.
+You have to set the 'network_path' in configs/config_test_detect_encode_decode.py.
 The trained model can then be tested as before with 
 ```
-python configs/test_encodeDecode.py
+python configs/test_detect_encode_decode.py
 ```
-You might want to change the test set in configs/test_encodeDecode.py to your own dataset.
+You might want to change the test set in configs/test_detect_encode_decode.py to your own dataset.
