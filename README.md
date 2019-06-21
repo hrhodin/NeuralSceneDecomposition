@@ -1,13 +1,13 @@
 Neural Scene Decomposition for Human Motion Capture
 ===================
 
-CVPR 2018 paper by Helge Rhodin, Victor Constantin, Isinsu Katircioglu, Mathieu Salzmann, Pascal Fua
+CVPR 2019 paper by Helge Rhodin, Victor Constantin, Isinsu Katircioglu, Mathieu Salzmann, Pascal Fua
 
 https://arxiv.org/abs/1903.05684
 
 Please cite the paper in your publications if it helps your research:
 
-    @inproceedings{rhodin2018neural,
+    @inproceedings{rhodin2019neural,
       author = {Rhodin, Helge and Constantin, Victor and Katircioglu Isinsu and Salzmann, Mathieu and Fua, Pascal},
       booktitle = {CVPR},
       title = {Neural Scene Decomposition for Multi-Person Motion Capture},
