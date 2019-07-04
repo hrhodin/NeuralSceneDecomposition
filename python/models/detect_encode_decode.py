@@ -154,10 +154,11 @@ class detect_encode_decode(nn.Module):
                  ):
         super(detect_encode_decode, self).__init__()
         arguments = []
-        for l in list(locals().items()):
-            if l[0] == "self": # only up to self (is this order always correct??)
-                break
-            setattr(self, l[0], l[1])
+        print("settign locals")
+        for k,v in list(locals().items()):
+            if k in "self":
+                continue
+            setattr(self, k, v)
 
         assert dimension_3d % 3 == 0
         self.match_crops = match_crops and ST_size>1
