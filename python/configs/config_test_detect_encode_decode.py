@@ -1,13 +1,12 @@
 from utils import io as utils_io
 import os
 
-if 1:
+if 0:
     config_dict = utils_io.loadModule("./configs/config_train_detect_encode_decode.py").config_dict
-    network_name = '/network_NVS.pth'
+    network_name = '/network_NVS_best.pth'
 else:
     config_dict = utils_io.loadModule("./configs/config_train_detect_encode_decode_pose.py").config_dict
-    network_name = '/network_pose.pth'
-    #network_name = '/network_NVS.pth'
+    network_name = '/network_pose_best.pth'
 
 config_dict['num_workers'] = 0
 config_dict['label_types_test'].remove('img')

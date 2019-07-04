@@ -20,6 +20,8 @@ from losses import images as losses_images
 
 import math
 import torch
+torch.cuda.current_device() # to prevent  "Cannot re-initialize CUDA in forked subprocess." error on some configurations
+
 import torch.optim
 import torchvision
 import torchvision.transforms as transforms
@@ -27,7 +29,6 @@ import torchvision.models as models_tv
 
 import sys
 sys.path.insert(0,'./ignite')
-from ignite._utils import convert_tensor
 from ignite.engine import Events
 
 if torch.cuda.is_available():
@@ -61,7 +62,7 @@ class IgniteTrainNVS:
         # now do training stuff
         epochs = 200
         train_loader = self.load_data_train(config_dict)
-        test_loader = self.load_data_test(config_dict)
+        test_loader  = self.load_data_test(config_dict)
         model = self.load_network(config_dict)
         model = model.to(device)
         optimizer = self.loadOptimizer(model,config_dict)

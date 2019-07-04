@@ -15,12 +15,12 @@ config_dict = {
                            'radiance_normalized','ST_depth','depth_map'], #,'smooth_mask',
     'label_types_train' : ['img','3D'],#'R_world_2_cam','R_cam_2_world'],
     'label_types_test'  : ['img','3D'],#'R_world_2_cam','R_cam_2_world'],
-    'num_workers'       : 8,
-    
+    'num_workers'       : 0, # HACK 8
+
     # problem class parameters
     'bones' : skeleton.bones_h36m,
 
-    # opt parameters    
+    # opt parameters
     'num_training_iterations' : 600000,
     'save_every' : 100000,
     'learning_rate' : 1e-3,# baseline: 0.001=1e-3
@@ -34,7 +34,7 @@ config_dict = {
     'outputDimension_3d' : numJoints * 3,
     'outputDimension_2d' : inputDimension // 8,
 
-    # loss 
+    # loss
     'train_scale_normalized' : True,
     'train_crop_relative' : False,
 
@@ -57,7 +57,7 @@ config_dict = {
     'useCamBatches' : 2,
     'useSubjectBatches' : True,
     'every_nth_frame' : 1,
-    
+
     'note' : 'resL3',
 
     # encode decode
@@ -125,4 +125,4 @@ network_path = '../output/train_detectNVS_resL3_layers4_wRGB1_wGrad0_wImgNet2_fg
 #config_dict['pretrained_detector_path'] = network_path + '/models/network_last_val.pth'
 
 network_path = '../output/train_detectNVS_e40'
-config_dict['pretrained_network_path'] = network_path + '/models/network_last_val.pth'
+#config_dict['pretrained_network_path'] = network_path + '/models/network_last_val.pth'

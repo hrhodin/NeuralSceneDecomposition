@@ -9,11 +9,12 @@ if 0:
 else:
     import os
     config_dict = utils_io.loadModule("configs/config_train_detect_encode_decode.py").config_dict
-    config_dict['pretrained_network_path'] = '../examples/network_NVS.pth'
+    network_name = '/network_NVS_best.pth'
+    config_dict['pretrained_network_path'] = '../examples'+network_name
     if not os.path.exists(config_dict['pretrained_network_path']):
         import urllib.request
         print("Downloading pre-trained weights, can take a while...")
-        urllib.request.urlretrieve("https://datasets-cvlab.epfl.ch/RhodinCVPR2019/network_NVS.pth",
+        urllib.request.urlretrieve("https://datasets-cvlab.epfl.ch/RhodinCVPR2019"+network_name,
                                    config_dict['pretrained_network_path'])
         print("Downloading done.")
 

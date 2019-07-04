@@ -63,19 +63,28 @@ Training your own model requires more dependencies:
 Self-supervised Representation Learning 
 =======================================
 
-After downloading and file extraction, you should be able to start training by executing the following scrip from within the code root folder.
+After downloading and file extraction, you have to specify the dataset paths in 'configs/config_train_detect_encode_decode.py' by changing the following lines,
+
+```
+'dataset_folder_train' : 'YOUR_PATH_TO_DATASET/EPFL-AmateurBoxingDataset-train',
+'dataset_folder_test' : 'YOUR_PATH_TO_DATASET/EPFL-AmateurBoxingDataset-val',
+```
+
+The training is started by executing the following scrip from within the code root folder.
 ```
 python configs/train_detect_encode_decode.py
 ```
 There is quite a bit of debug output. Feel free to remove some if you feel like.
 
-It will create an "output/trainNVS...." folder to monitor the progress (in case you don't use visdom).
-Every 5k frames it will evaluate on the test set. This and other settings can be changed in configs/config_detect_encode_decode.py
+If an error in relation to parallelization occurs, you can try setting ' 'num_workers' : 8' in  'configs/config_train_detect_encode_decode.py'.
 
-Test your model
+The script will create an "output/trainNVS...." folder to monitor the progress (useful in case you don't use visdom).
+Every 5k frames it will evaluate on the test set. This and other settings can be changed in 'configs/config_detect_encode_decode.py'.
+
+Test your trained model
 =======================
 
-You have to set the 'network_path' in configs/config_test_detect_encode_decode.py.
+You have to set the 'network_path' in configs/config_test_detect_encode_decode.py to "SOME_PATH/output/trainNVS....".
 The trained model can then be tested as before with 
 ```
 python configs/test_detect_encode_decode.py

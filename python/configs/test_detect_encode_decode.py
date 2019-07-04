@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 import torch
+torch.cuda.current_device() # to prevent  "Cannot re-initialize CUDA in forked subprocess." error on some configurations
+
 import numpy as np
 import numpy.linalg as la
 import IPython
@@ -218,11 +220,11 @@ class IgniteTestNVS(train_detect_encode_decode.IgniteTrainNVS):
                 pose_mean = label_dict['pose_mean'][image_index].numpy()
                 pose_std = label_dict['pose_std'][image_index].numpy()
                 pred_pose1 = (output_dict[key][image_index].numpy().reshape(pose_mean.shape) * pose_std) + pose_mean
-                pose_rotated1 = R_world_in_cam @ pred_pose1[1].reshape([-1, 3]).T
+                pose_rotated1 = R_world_in_cam @ pred_pose1[0].reshape([-1, 3]).T
                 utils_plt.plot_3Dpose_simple(ax_pred_skel1, pose_rotated1, bones=utils_skel.bones_h36m,
                                              plot_handles=handle_pred_skel1)
                 pred_pose2 = (output_dict[key][image_index].numpy().reshape(pose_mean.shape) * pose_std) + pose_mean
-                pose_rotated2 = R_world_in_cam @ pred_pose2[0].reshape([-1, 3]).T
+                pose_rotated2 = R_world_in_cam @ pred_pose2[1].reshape([-1, 3]).T
                 utils_plt.plot_3Dpose_simple(ax_pred_skel2, pose_rotated2, bones=utils_skel.bones_h36m,
                                              plot_handles=handle_pred_skel2)
 

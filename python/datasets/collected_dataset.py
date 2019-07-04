@@ -16,12 +16,10 @@ from random import shuffle
 
 import IPython
 
-import numpy.linalg as la
+#import numpy.linalg as la
 
 from utils import datasets as utils_data
 from tqdm import tqdm
-import pickle
-
 
 class CollectedDataset(data.Dataset):
     def __init__(self, data_folder, img_type,
