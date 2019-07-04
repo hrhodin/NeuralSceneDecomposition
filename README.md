@@ -1,4 +1,4 @@
-Neural Scene Decomposition for Human Motion Capture
+NSD: Neural Scene Decomposition for Human Motion Capture
 ===================
 
 CVPR 2019 paper by Helge Rhodin, Victor Constantin, Isinsu Katircioglu, Mathieu Salzmann, Pascal Fua
