@@ -228,6 +228,8 @@ class IgniteTestNVS(train_detect_encode_decode.IgniteTrainNVS):
 
             # flush drawings
             fig.canvas.draw_idle()
+            print("using",device,"device")
+
         update_figure()
 
         def update_rotation(event):
