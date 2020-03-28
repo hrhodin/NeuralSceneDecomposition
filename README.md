@@ -31,11 +31,15 @@ Minimal Dependencies
 ===================
 
 For testing a pre-trained model only the following packages are required:
+* python 3
 * Pytorch 0.4 (higher versions might work as well) and torchvision
 * numpy
 * matplotlib
 * pickle
 * imageio
+
+Such environment can be created with
+conda env create -n nsd conda install -n nsd -c pytorch python=3.6 pytorch==0.4 matplotlib numpy imageio torchvision=0.2.1-py36 pillow=6.2.1 h5py=2.10.0 tqdm=4.43.0-py_0 cudnn=7.1.02 matplotlib=2.2.3
 
 Moreover you will need a GPU and X Windows System (e.g.,XQuartz for mac) to run the interactive demo.
 
